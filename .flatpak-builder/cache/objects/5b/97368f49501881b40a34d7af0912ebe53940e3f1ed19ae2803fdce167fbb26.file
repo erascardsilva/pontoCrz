@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>br.com.pontoCrz</id>
+  <name>PontoCrz</name>
+  <summary>Transforme fotos em gráficos de Ponto Cruz com paleta DMC</summary>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <description>
+    <p>
+      PontoCrz é um aplicativo desktop que converte qualquer imagem (JPG, PNG)
+      em um gráfico técnico de Ponto Cruz, utilizando a paleta oficial de cores DMC
+      e exportando em alta resolução (300 DPI) para folhas A4 ou A3.
+    </p>
+    <ul>
+      <li>Paleta oficial DMC com 454 cores</li>
+      <li>Grade técnica de 10x10 pontos</li>
+      <li>Exportação A4/A3 em 300 DPI</li>
+      <li>Controle de zoom e quantidade de cores</li>
+    </ul>
+  </description>
+  <url type="homepage">https://github.com/ErasmoCardoso/pontoCrz</url>
+  <developer_name>Erasmo Cardoso - Dev</developer_name>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="1.0.0" date="2026-02-27"/>
+  </releases>
+  <categories>
+    <category>Graphics</category>
+    <category>2DGraphics</category>
+  </categories>
+</component>

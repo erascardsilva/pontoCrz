@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg-color: #0f172a;
+  --bg-secondary: #1e293b;
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --accent-color: #38bdf8;
+  --accent-glow: rgba(56, 189, 248, 0.3);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --green: #4ade80;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: radial-gradient(ellipse at top, #1e3a5f 0%, #0f172a 60%);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#app { width: 100%; }
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  max-width: 98vw;
+  margin: 0 auto;
+}
+
+/* ─── Título ─────────────────────────────── */
+.title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, var(--accent-color) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0.5rem 0 0;
+  letter-spacing: -1px;
+}
+
+/* ─── Glass Card ─────────────────────────── */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  width: 100%;
+}
+
+/* ─── Preview ────────────────────────────── */
+.preview-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.preview-box {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  overflow: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 380px);
+  min-height: 350px;
+  border: 1px solid var(--glass-border);
+  transition: border-color 0.3s;
+}
+
+.preview-box:hover {
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.preview-box > * {
+  max-width: 100%;
+}
+
+/* Label de canto absolutamente posicionada */
+.preview-label {
+  position: absolute;
+  bottom: 8px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+}
+
+/* ─── Grid de Ponto Cruz ─────────────────── */
+.stitch-grid {
+  display: grid;
+  background-color: #444;
+  gap: 1px;
+  border: 1px solid #444;
+  width: fit-content;
+  height: fit-content;
+  padding: 8px;
+  margin: auto;
+}
+
+.stitch-pixel {
+  position: relative;
+  cursor: crosshair;
+  transition: filter 0.15s;
+}
+
+.stitch-pixel:hover {
+  filter: brightness(1.3);
+  z-index: 5;
+}
+
+/* Grade destacada 10x10 */
+.major-grid-x {
+  border-right: 2px solid rgba(0, 0, 0, 0.7) !important;
+}
+.major-grid-y {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.7) !important;
+}
+
+/* ─── Controles ──────────────────────────── */
+.controls-panel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+.control-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.control-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.control-label span.value {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--accent-color);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* Slider customizado */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 6px;
+  background: var(--bg-secondary);
+  outline: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  box-shadow: 0 0 8px var(--accent-glow);
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.1s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 16px var(--accent-glow);
+  transform: scale(1.2);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  cursor: pointer;
+  border: none;
+}
+
+/* ─── Botão Principal ───────────────────── */
+.btn-primary {
+  background: var(--accent-color);
+  color: var(--bg-color);
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: transform 0.15s, opacity 0.15s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px var(--accent-glow);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ─── Paleta DMC ────────────────────────── */
+.dmc-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--glass-border);
+  padding: 4px 10px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+.dmc-chip:hover {
+  background: rgba(255,255,255,0.1);
+}

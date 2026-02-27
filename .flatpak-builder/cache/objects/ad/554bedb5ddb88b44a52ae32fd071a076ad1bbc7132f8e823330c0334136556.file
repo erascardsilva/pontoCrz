@@ -1,0 +1,49 @@
+{
+  "id" : "br.com.pontoCrz",
+  "runtime" : "org.gnome.Platform",
+  "runtime-version" : "46",
+  "runtime-commit" : "1adbb849eea4915c4ca9b5a7718d26a881d7f67f469a11822b52605933bcbe70",
+  "sdk" : "org.gnome.Sdk",
+  "sdk-commit" : "aa0461bd06103dd53177ff48cf1b0ece18e094cbc8d67c424545577e7d359cba",
+  "command" : "pontoCrz",
+  "modules" : [
+    {
+      "name" : "pontoCrz",
+      "buildsystem" : "simple",
+      "sources" : [
+        {
+          "path" : "build/bin/pontoCrz",
+          "type" : "file"
+        },
+        {
+          "path" : "build/appicon.png",
+          "type" : "file"
+        },
+        {
+          "path" : "packaging/pontoCrz.desktop",
+          "type" : "file"
+        },
+        {
+          "path" : "packaging/pontoCrz.appdata.xml",
+          "type" : "file"
+        }
+      ],
+      "build-commands" : [
+        "install -Dm755 pontoCrz /app/bin/pontoCrz",
+        "install -Dm644 appicon.png /app/share/icons/hicolor/256x256/apps/br.com.pontoCrz.png",
+        "install -Dm644 pontoCrz.desktop /app/share/applications/br.com.pontoCrz.desktop",
+        "install -Dm644 pontoCrz.appdata.xml /app/share/metainfo/br.com.pontoCrz.appdata.xml"
+      ]
+    }
+  ],
+  "finish-args" : [
+    "--share=ipc",
+    "--socket=x11",
+    "--socket=wayland",
+    "--filesystem=home",
+    "--filesystem=xdg-pictures",
+    "--device=dri",
+    "--share=network"
+  ],
+  "source-date-epoch" : 1772162718
+}

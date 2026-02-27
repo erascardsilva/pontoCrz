@@ -1,0 +1,33 @@
+app-id: br.com.pontoCrz
+runtime: org.gnome.Platform
+runtime-version: '46'
+sdk: org.gnome.Sdk
+command: pontoCrz
+
+finish-args:
+  - --share=ipc
+  - --socket=x11
+  - --socket=wayland
+  - --filesystem=home
+  - --filesystem=xdg-pictures
+  - --device=dri
+  # WebKitGTK precisa de acesso à rede local para IPC interno do Wails
+  - --share=network
+
+modules:
+  - name: pontoCrz
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 pontoCrz /app/bin/pontoCrz
+      - install -Dm644 appicon.png /app/share/icons/hicolor/256x256/apps/br.com.pontoCrz.png
+      - install -Dm644 pontoCrz.desktop /app/share/applications/br.com.pontoCrz.desktop
+      - install -Dm644 pontoCrz.appdata.xml /app/share/metainfo/br.com.pontoCrz.appdata.xml
+    sources:
+      - type: file
+        path: build/bin/pontoCrz
+      - type: file
+        path: build/appicon.png
+      - type: file
+        path: packaging/pontoCrz.desktop
+      - type: file
+        path: packaging/pontoCrz.appdata.xml
