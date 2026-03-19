@@ -1,6 +1,6 @@
 name: ponto-crz
 base: core24
-icon: snap/gui/icon.png
+icon: snap/gui/ponto-crz.png
 title: PontoCrz
 version: '1.0.1'
 license: MIT
@@ -20,6 +20,7 @@ apps:
   ponto-crz:
     command: bin/pontoCrz
     extensions: [gnome]
+    desktop: snap/gui/ponto-crz.desktop
     plugs:
       - home
       - network
