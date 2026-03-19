@@ -2,7 +2,7 @@ name: ponto-crz
 base: core24
 icon: snap/gui/icon.png
 title: PontoCrz
-version: '1.0.0'
+version: '1.0.1'
 license: MIT
 contact: https://github.com/erascardsilva/pontoCrz/issues
 website: https://github.com/erascardsilva/pontoCrz
