@@ -1,6 +1,10 @@
 name: ponto-crz
 base: core24
+title: PontoCrz
 version: '1.0.0'
+license: MIT
+contact: https://github.com/erascardsilva/pontoCrz/issues
+website: https://github.com/erascardsilva/pontoCrz
 summary: Transforme fotos em gráficos de ponto cruz
 description: |
   PontoCrz é uma ferramenta para transformar suas fotos favoritas em 
