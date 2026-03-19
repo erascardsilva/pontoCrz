@@ -1,6 +1,5 @@
 name: ponto-crz
 base: core24
-icon: snap/gui/ponto-crz.png
 title: PontoCrz
 version: '1.0.1'
 license: MIT
