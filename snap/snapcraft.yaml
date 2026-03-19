@@ -34,3 +34,8 @@ parts:
     source: build/bin/
     organize:
       pontoCrz: bin/pontoCrz
+  icons:
+    plugin: dump
+    source: snap/gui/
+    organize:
+      ponto-crz.png: usr/share/icons/hicolor/256x256/apps/ponto-crz.png
