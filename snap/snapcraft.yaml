@@ -20,7 +20,6 @@ apps:
   ponto-crz:
     command: bin/pontoCrz
     extensions: [gnome]
-    desktop: snap/gui/ponto-crz.desktop
     plugs:
       - home
       - network
