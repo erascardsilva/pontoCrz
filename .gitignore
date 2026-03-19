@@ -33,3 +33,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Snapcraft Login (Credenciais sensíveis)
+snapcraft.login
