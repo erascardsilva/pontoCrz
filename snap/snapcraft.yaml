@@ -1,0 +1,34 @@
+name: ponto-crz
+base: core24
+version: '1.0.0'
+summary: Transforme fotos em gráficos de ponto cruz
+description: |
+  PontoCrz é uma ferramenta para transformar suas fotos favoritas em 
+  gráficos técnicos de ponto cruz (cross stitch).
+  Escolha a largura em pontos, a quantidade de cores DMC e salve em JPG
+  pronto para imprimir e bordar à mão.
+
+grade: stable
+confinement: strict
+
+icon: snap/gui/ponto-crz.png
+
+apps:
+  ponto-crz:
+    command: bin/pontoCrz
+    extensions: [gnome]
+    desktop: snap/gui/ponto-crz.desktop
+    plugs:
+      - home
+      - network
+      - desktop
+      - desktop-legacy
+      - x11
+      - wayland
+
+parts:
+  app:
+    plugin: dump
+    source: build/bin/
+    organize:
+      pontoCrz: bin/pontoCrz
