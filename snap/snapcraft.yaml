@@ -41,3 +41,5 @@ parts:
       cp $SNAPCRAFT_PROJECT_DIR/snap/gui/ponto-crz.png $SNAPCRAFT_PRIME/usr/share/pixmaps/ponto-crz.png
       mkdir -p $SNAPCRAFT_PRIME/usr/share/icons/hicolor/256x256/apps
       cp $SNAPCRAFT_PROJECT_DIR/snap/gui/ponto-crz.png $SNAPCRAFT_PRIME/usr/share/icons/hicolor/256x256/apps/ponto-crz.png
+      mkdir -p $SNAPCRAFT_PRIME/meta/gui/icons/hicolor/256x256/apps
+      cp $SNAPCRAFT_PROJECT_DIR/snap/gui/ponto-crz.png $SNAPCRAFT_PRIME/meta/gui/icons/hicolor/256x256/apps/ponto-crz.png
