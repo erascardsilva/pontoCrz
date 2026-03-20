@@ -6,6 +6,8 @@ version: '1.0.1'
 license: MIT
 contact: https://github.com/erascardsilva/pontoCrz/issues
 website: https://github.com/erascardsilva/pontoCrz
+source-code: https://github.com/erascardsilva/pontoCrz
+issues: https://github.com/erascardsilva/pontoCrz/issues
 summary: Transforme fotos em gráficos de ponto cruz
 description: |
   PontoCrz é uma ferramenta para transformar suas fotos favoritas em 
