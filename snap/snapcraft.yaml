@@ -43,4 +43,3 @@ parts:
       cp $SNAPCRAFT_PROJECT_DIR/snap/gui/ponto-crz.png $SNAPCRAFT_PRIME/usr/share/icons/hicolor/256x256/apps/ponto-crz.png
       mkdir -p $SNAPCRAFT_PRIME/meta/gui/icons/hicolor/256x256/apps
       cp $SNAPCRAFT_PROJECT_DIR/snap/gui/ponto-crz.png $SNAPCRAFT_PRIME/meta/gui/icons/hicolor/256x256/apps/snap.ponto-crz.png
-      printf '[Icon Theme]\nName=hicolor\nComment=Hicolor Icon Theme\nDirectories=256x256/apps\n\n[256x256/apps]\nSize=256\nType=Fixed\n' > $SNAPCRAFT_PRIME/meta/gui/icons/hicolor/index.theme
