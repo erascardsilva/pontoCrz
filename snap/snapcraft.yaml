@@ -39,3 +39,4 @@ parts:
     source: snap/gui/
     organize:
       pcrz-application-icon.png: usr/share/icons/hicolor/256x256/apps/pcrz-application-icon.png
+      pcrz-application-icon.png: usr/share/pixmaps/ponto-crz.png
