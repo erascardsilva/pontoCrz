@@ -1,6 +1,6 @@
 name: ponto-crz
 base: core24
-icon: snap/gui/pcrz-application-icon.png
+icon: snap/gui/ponto-crz.png
 title: PontoCrz
 version: '1.0.1'
 license: MIT
@@ -35,8 +35,9 @@ parts:
     organize:
       pontoCrz: bin/pontoCrz
   icons:
-    plugin: dump
-    source: snap/gui/
-    organize:
-      pcrz-application-icon.png: usr/share/icons/hicolor/256x256/apps/pcrz-application-icon.png
-      pcrz-application-icon.png: usr/share/pixmaps/ponto-crz.png
+    plugin: nil
+    override-prime: |
+      mkdir -p $SNAPCRAFT_PRIME/usr/share/pixmaps
+      cp $SNAPCRAFT_PROJECT_DIR/snap/gui/ponto-crz.png $SNAPCRAFT_PRIME/usr/share/pixmaps/ponto-crz.png
+      mkdir -p $SNAPCRAFT_PRIME/usr/share/icons/hicolor/256x256/apps
+      cp $SNAPCRAFT_PROJECT_DIR/snap/gui/ponto-crz.png $SNAPCRAFT_PRIME/usr/share/icons/hicolor/256x256/apps/ponto-crz.png
