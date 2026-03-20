@@ -36,12 +36,3 @@ parts:
     source: build/bin/
     organize:
       pontoCrz: bin/pontoCrz
-  icons:
-    plugin: nil
-    override-prime: |
-      mkdir -p $SNAPCRAFT_PRIME/usr/share/pixmaps
-      cp $SNAPCRAFT_PROJECT_DIR/snap/gui/ponto-crz.png $SNAPCRAFT_PRIME/usr/share/pixmaps/ponto-crz.png
-      mkdir -p $SNAPCRAFT_PRIME/usr/share/icons/hicolor/256x256/apps
-      cp $SNAPCRAFT_PROJECT_DIR/snap/gui/ponto-crz.png $SNAPCRAFT_PRIME/usr/share/icons/hicolor/256x256/apps/ponto-crz.png
-      mkdir -p $SNAPCRAFT_PRIME/meta/gui/icons/hicolor/256x256/apps
-      cp $SNAPCRAFT_PROJECT_DIR/snap/gui/ponto-crz.png $SNAPCRAFT_PRIME/meta/gui/icons/hicolor/256x256/apps/snap.ponto-crz.png
