@@ -1,5 +1,6 @@
 name: ponto-crz
 base: core24
+icon: snap/gui/pcrz-application-icon.png
 title: PontoCrz
 version: '1.0.1'
 license: MIT
@@ -37,4 +38,4 @@ parts:
     plugin: dump
     source: snap/gui/
     organize:
-      ponto-crz.png: usr/share/icons/hicolor/256x256/apps/ponto-crz.png
+      pcrz-application-icon.png: usr/share/icons/hicolor/256x256/apps/pcrz-application-icon.png
