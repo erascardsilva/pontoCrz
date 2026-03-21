@@ -12,6 +12,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat&logo=typescript)](https://typescriptlang.org)
 [![Linux](https://img.shields.io/badge/Linux-ready-FCC624?style=flat&logo=linux)](https://kernel.org)
 [![Windows](https://img.shields.io/badge/Windows-ready-0078D4?style=flat&logo=windows)](https://microsoft.com)
+[![Disponível na Snap Store](https://snapcraft.io/pt/dark/install.svg)](https://snapcraft.io/ponto-crz)
 
 </div>
 
@@ -148,6 +149,13 @@ flatpak install build/bin/pontoCrz.flatpak
 flatpak run br.com.pontoCrz
 ```
 
+### 🐧 Linux — Snap
+
+```bash
+# Instalar a versão via Snap
+sudo snap install ponto-crz
+```
+
 ### 🪟 Windows — Run directly
 
 ```
@@ -226,6 +234,7 @@ pontoCrz/
 |---|---|
 | Linux | `build/bin/pontoCrz` |
 | Linux (Flatpak) | `build/bin/pontoCrz.flatpak` |
+| Linux (Snap) | `snap install ponto-crz` |
 | Windows | `build/bin/pontoCrz.exe` |
 | Windows (Installer) | `build/bin/pontoCrz-amd64-installer.exe` |
 
