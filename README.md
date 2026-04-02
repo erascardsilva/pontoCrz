@@ -22,9 +22,9 @@
 
 **PontoCrz** is a desktop application that converts images (JPG, PNG) into **Cross-Stitch charts**, featuring:
 
-- **Official DMC palette** with 454 colors matched via RGB Euclidean distance.
+- **Official DMC palette** with 454 colors (RGB Euclidean distance mapping).
 - **Nearest Neighbor** algorithm for resizing.
-- **Technical grid** with 10×10 reference markers.
+- **Technical grid** with 10×10 reference markers for counting stitches.
 - **A4 / A3 export** at 300 DPI.
 
 ---
@@ -48,7 +48,7 @@ graph TB
     end
 
     subgraph Output ["Output"]
-        JPG["Cross-Stitch Chart JPG\n(With grid)"]
+        JPG["Cross-Stitch Chart JPG\n(With 10x10 grid)"]
     end
 
     UI -- "Wails RPC" --> Bindings
@@ -87,7 +87,7 @@ graph TB
 resized := image.NewRGBA(image.Rect(0, 0, targetWidth, targetHeight))
 draw.NearestNeighbor.Scale(resized, resized.Bounds(), img, bounds, draw.Over, nil)
 
-// Map pixels to DMC palette
+// Map each pixel to the nearest DMC color
 for y := startRow; y < endRow; y++ {
     for x := 0; x < targetWidth; x++ {
         c := resized.At(x, y)
@@ -95,12 +95,12 @@ for y := startRow; y < endRow; y++ {
         r, g, b := uint8(r32>>8), uint8(g32>>8), uint8(b32>>8)
 
         nearest := FindNearestDMC(r, g, b)
-        pixels[y][x] = nearest.Hex         // e.g. "#3B1F14"
+        pixels[y][x] = nearest.Hex
     }
 }
 ```
 
-### 2. Export with Grid (`processor.go`)
+### 2. Export with Technical Grid (`processor.go`)
 
 ```go
 func SaveToJPG(outputPath string, data *ProcessedImage, cellSize int) error {
@@ -138,19 +138,6 @@ chmod +x build/bin/pontoCrz
 ./build/bin/pontoCrz
 ```
 
-### Linux — Flatpak
-
-```bash
-flatpak install build/bin/pontoCrz.flatpak
-flatpak run br.com.pontoCrz
-```
-
-### Linux — Snap
-
-```bash
-sudo snap install ponto-crz
-```
-
 ---
 
 ### Windows — Direct Run
@@ -158,13 +145,6 @@ sudo snap install ponto-crz
 ```
 1. Download the repository
 2. Run: build\bin\pontoCrz.exe
-```
-
-### Windows — Installer
-
-```
-1. Run: build\bin\pontoCrz-amd64-installer.exe
-2. Follow the NSIS steps
 ```
 
 ---
@@ -181,12 +161,6 @@ wails build
 wails build --platform windows/amd64 -nsis
 ```
 
-### Flatpak
-```bash
-flatpak-builder --user --install --force-clean build-flatpak br.com.pontoCrz.yml
-flatpak build-bundle repo build/bin/pontoCrz.flatpak br.com.pontoCrz
-```
-
 ---
 
 ## Project Structure
@@ -195,27 +169,15 @@ flatpak build-bundle repo build/bin/pontoCrz.flatpak br.com.pontoCrz
 pontoCrz/
 ├── build/bin/                   ← Executables
 ├── backend/
-│   ├── processor.go             ← Image logic
+│   ├── processor.go             ← Image processing
 │   └── colors.go                ← DMC palette
 ├── frontend/src/
-│   ├── App.tsx                  ← UI
+│   ├── App.tsx                  ← UI component
 │   └── style.css                ← Styles
 ├── app.go                       ← Wails bridge
 ├── main.go                      ← Entry point
 └── wails.json                   ← Configuration
 ```
-
----
-
-## Executable Locations
-
-| Platform | Path |
-|---|---|
-| Linux | `build/bin/pontoCrz` |
-| Flatpak | `build/bin/pontoCrz.flatpak` |
-| Snap | `snap install ponto-crz` |
-| Windows | `build/bin/pontoCrz.exe` |
-| Windows Installer | `build/bin/pontoCrz-amd64-installer.exe` |
 
 ---
 
