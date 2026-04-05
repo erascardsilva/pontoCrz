@@ -189,6 +189,8 @@ MIT License.
 
 <div align="center">
 
-**Erasmo Cardoso · Dev**
+**Erasmo Cardoso**<br>
+**Software Engineer | Electronics Specialist**
+
 
 </div>
