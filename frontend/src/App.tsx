@@ -1,5 +1,5 @@
 // PontoCrz — Interface Principal
-// Autor: Erasmo Cardoso - Dev
+// Autor: Erasmo Cardoso - Software Engineer | Electronics Specialist
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { PickFile, ProcessImage, SaveImage } from "../wailsjs/go/main/App.js";
@@ -115,7 +115,8 @@ function App() {
                             </button>
                         </div>
                         <div style={{ borderTop: '1px solid rgba(255,255,255,0.07)', marginTop: '1.2rem', paddingTop: '0.8rem', fontSize: 12, color: 'var(--text-secondary)', textAlign: 'right' }}>
-                            Desenvolvido por <strong style={{ color: 'var(--accent-color)' }}>Erasmo Cardoso</strong> · Dev
+                            <strong style={{ color: 'var(--accent-color)', fontSize: '13px' }}>Erasmo Cardoso</strong><br />
+                            Software Engineer | Electronics Specialist
                         </div>
                     </div>
                 </div>

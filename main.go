@@ -1,5 +1,5 @@
 // PontoCrz — Transformador de Imagem em Ponto Cruz
-// Autor: Erasmo Cardoso - Dev
+// Autor: Erasmo Cardoso - Software Engineer | Electronics Specialist
 package main
 
 import (

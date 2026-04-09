@@ -1,5 +1,5 @@
 // PontoCrz — Processamento de Imagem e Exportação de Gráfico
-// Autor: Erasmo Cardoso - Dev
+// Autor: Erasmo Cardoso - Software Engineer | Electronics Specialist
 package backend
 
 import (
