@@ -255,3 +255,77 @@ input[type="range"]::-moz-range-thumb {
 .dmc-chip:hover {
   background: rgba(255,255,255,0.1);
 }
+
+/* ─── Doação / Apoio ────────────────────── */
+.btn-donate {
+  background: #0070ba; 
+  color: white;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 50px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 112, 186, 0.3);
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.btn-donate:hover {
+  background: #005ea6;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 112, 186, 0.5);
+}
+
+.btn-donate-fixed {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: rgba(30, 41, 59, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  padding: 8px 14px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 99;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.btn-donate-fixed img {
+  height: 20px;
+  width: auto;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.btn-donate-fixed:hover {
+  background: var(--accent-color);
+  color: var(--bg-color);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px var(--accent-glow);
+  border-color: var(--accent-color);
+}
+
+.btn-donate-fixed span {
+  max-width: 0;
+  overflow: hidden;
+  transition: max-width 0.4s ease-out, opacity 0.3s;
+  white-space: nowrap;
+  display: inline-block;
+  opacity: 0;
+}
+
+.btn-donate-fixed:hover span {
+  max-width: 80px;
+  opacity: 1;
+}

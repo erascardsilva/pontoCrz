@@ -189,6 +189,10 @@ MIT License.
 
 <div align="center">
 
+[![Apoiar Projeto](https://img.shields.io/badge/Apoiar%20Projeto-PayPal-0070ba?style=flat-square&logo=paypal)](https://www.paypal.com/ncp/payment/8V6WQCGN6HDCQ)
+
+<br>
+
 **Erasmo Cardoso**<br>
 **Software Engineer | Electronics Specialist**
 

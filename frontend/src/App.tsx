@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { PickFile, ProcessImage, SaveImage } from "../wailsjs/go/main/App.js";
 import { backend } from "../wailsjs/go/models.js";
+import { BrowserOpenURL } from "../wailsjs/runtime/runtime";
+import paypalLogo from './assets/images/paypal.png';
 
 function App() {
     const [imagePath, setImagePath] = useState('');
@@ -15,6 +17,10 @@ function App() {
     const [loading, setLoading] = useState(false);
     const [saving, setSaving] = useState(false);
     const [showAbout, setShowAbout] = useState(false);
+
+    const handleDonate = () => {
+        BrowserOpenURL("https://www.paypal.com/ncp/payment/8V6WQCGN6HDCQ");
+    };
 
     const handlePickFile = async () => {
         try {
@@ -102,6 +108,12 @@ function App() {
                             <li><strong>Papel (A4/A3)</strong> — Escolha o tamanho da folha antes de salvar para impressão em alta resolução (300 DPI).</li>
                             <li><strong>Salvar JPG</strong> — Exporta o gráfico com grade técnica pronto para imprimir e bordar.</li>
                         </ol>
+                        <div style={{ marginTop: '1.5rem', display: 'flex', justifyContent: 'center' }}>
+                            <button onClick={handleDonate} className="btn-donate">
+                                <img src={paypalLogo} alt="PayPal" style={{ height: 20, marginRight: 8 }} />
+                                Apoiar Projeto
+                            </button>
+                        </div>
                         <div style={{ borderTop: '1px solid rgba(255,255,255,0.07)', marginTop: '1.2rem', paddingTop: '0.8rem', fontSize: 12, color: 'var(--text-secondary)', textAlign: 'right' }}>
                             Desenvolvido por <strong style={{ color: 'var(--accent-color)' }}>Erasmo Cardoso</strong> · Dev
                         </div>
@@ -202,6 +214,11 @@ function App() {
                     </div>
                 </div>
             )}
+
+            <button className="btn-donate-fixed" onClick={handleDonate} title="Apoie o Desenvolvedor">
+                <img src={paypalLogo} alt="Apoiar" />
+                <span>Apoia</span>
+            </button>
         </div>
     );
 }
